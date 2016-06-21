@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <admin>
+          <security>
+            <session_lifetime>900000</session_lifetime>
+          </security>
+        </admin>
+        <payment>
+            <braintree>
+              <active>1</active>
+              <title>Credit Card</title>
+              <environment>sandbox</environment>
+              <payment_action>authorize_capture</payment_action>
+              <merchant_account_id>magento</merchant_account_id>
+              <merchant_id>zkw2ctrkj75ndvkc</merchant_id>
+              <public_key>0:2:ApGQhW1ZKfcjCNbx2ltiQyXcCsH8Hhs7:o/cW/u1XZWa9IE25BPfv6yfv20wBrIeFDGeYNb8RS1Y=</public_key>
+              <private_key>0:2:YNELFulKwvcawA2ITboiYrKhZJO61LtQ:zHD9PfH+khnshtC1/zJCmm7PxqQo23MzjkfYMemeH0A=</private_key>
+              <debug>0</debug>
+              <capture_action>invoice</capture_action>
+              <order_status>processing</order_status>
+              <use_vault>0</use_vault>
+              <duplicate_card>0</duplicate_card>
+              <usecvv>1</usecvv>
+              <cctypes>AE,VI,MC,DI,JCB</cctypes>
+              <enable_cc_detection>1</enable_cc_detection>
+              <fraudprotection>0</fraudprotection>
+              <usecache>0</usecache>
+              <allowspecific>0</allowspecific>
+              <countrycreditcard>a:0:{}</countrycreditcard>
+              <verify_3dsecure>0</verify_3dsecure>
+            </braintree>
+            <braintree_paypal>
+              <active>1</active>
+              <title>PayPal</title>
+              <payment_action>authorize</payment_action>
+              <order_status>processing</order_status>
+              <allowspecific>0</allowspecific>
+              <require_billing_address>0</require_billing_address>
+              <display_on_shopping_cart>0</display_on_shopping_cart>
+              <allow_shipping_address_override>0</allow_shipping_address_override>
+              <debug>0</debug>
+            </braintree_paypal>
+        </payment>
+    </default>
+</config>
