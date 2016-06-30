@@ -33,8 +33,8 @@
          "payment/braintree/payment_action", "authorize_capture", "default", 0)->saveConfig(
          "payment/braintree/merchant_account_id", "magento", "default", 0)->saveConfig(
          "payment/braintree/merchant_id", "zkw2ctrkj75ndvkc", "default", 0)->saveConfig(
-         "payment/braintree/public_key", "0:2:ApGQhW1ZKfcjCNbx2ltiQyXcCsH8Hhs7:o/cW/u1XZWa9IE25BPfv6yfv20wBrIeFDGeYNb8RS1Y=", "default", 0)->saveConfig(
-         "payment/braintree/private_key", "0:2:YNELFulKwvcawA2ITboiYrKhZJO61LtQ:zHD9PfH+khnshtC1/zJCmm7PxqQo23MzjkfYMemeH0A=", "default", 0)->saveConfig(
+         "payment/braintree/public_key", "0:2:5bgc5OpZgjZmtbN4SoHjtjk4GwfVmFxh:BHaV/Ln6Y24Im9QP3FqXh/X6ZqfWYeeqDgJCsK79Pj8=", "default", 0)->saveConfig(
+         "payment/braintree/private_key", "0:2:HDkCiAspJhB2jfX2tvbNElIaHNVUij2P:fAHWXy6S3AdZ1F2eNrw3Qck15XF5KsDsE1RaVMmBmZk=", "default", 0)->saveConfig(
          "payment/braintree/debug", "0", "default", 0)->saveConfig(
          "payment/braintree/capture_action", "invoice", "default", 0)->saveConfig(
          "payment/braintree/order_status", "processing", "default", 0)->saveConfig(
