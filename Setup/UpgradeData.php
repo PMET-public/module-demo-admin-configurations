@@ -34,8 +34,8 @@
           "dev/js/enable_js_bundling", "1", "default", 0)->saveConfig(
           "dev/template/minify_html", "1", "default", 0)->saveConfig(
           "payment/braintree/usecache", "1", "default", 0)->saveConfig(
-          "system/full_page_cache/ttl", "8640000", 0)->saveConfig(
-          "web/cookie/cookie_lifetime", "604800", 0)->saveConfig(
+          "system/full_page_cache/ttl", "8640000", "default", 0)->saveConfig(
+          "web/cookie/cookie_lifetime", "604800", "default", 0)->saveConfig(
           "admin/security/admin_account_sharing", "1", "default", 0)->saveConfig(
           "web/seo/use_rewrites", "1", "default", 0)->saveConfig(
           "payment/braintree/active", "1", "default", 0)->saveConfig(
