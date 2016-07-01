@@ -15,8 +15,8 @@
               <payment_action>authorize_capture</payment_action>
               <merchant_account_id>magento</merchant_account_id>
               <merchant_id>zkw2ctrkj75ndvkc</merchant_id>
-              <public_key>0:2:ApGQhW1ZKfcjCNbx2ltiQyXcCsH8Hhs7:o/cW/u1XZWa9IE25BPfv6yfv20wBrIeFDGeYNb8RS1Y=</public_key>
-              <private_key>0:2:YNELFulKwvcawA2ITboiYrKhZJO61LtQ:zHD9PfH+khnshtC1/zJCmm7PxqQo23MzjkfYMemeH0A=</private_key>
+              <public_key>sn6xgt8pqv8868pq</public_key>
+              <private_key>ad7807895eae5bd5a3cc913005eaefe8</private_key>
               <debug>0</debug>
               <capture_action>invoice</capture_action>
               <order_status>processing</order_status>

@@ -13,18 +13,27 @@
 
  class UpgradeData implements UpgradeDataInterface {
    public $_resourceConfig;
-
+     /**
+      * @var \Magento\Framework\App\Config\ScopeConfigInterface
+      */
+     protected $scopeConfig;
+     private $encrypted;
+     const BRAINTREE_PUBLICKEY = 'sn6xgt8pqv8868pq';
+     const BRAINTREE_PRIVATEKEY = 'ad7807895eae5bd5a3cc913005eaefe8';
    public function __construct(
-       \Magento\Config\Model\ResourceModel\Config $resourceConfig
+       \Magento\Config\Model\ResourceModel\Config $resourceConfig,
+       \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
+       \Magento\Framework\Encryption\EncryptorInterface $encrypted
    ) {
        $this->_resourceConfig = $resourceConfig;
+       $this->scopeConfig = $scopeConfig;
+       $this->encrypted=$encrypted;
    }
   
      public function upgrade( ModuleDataSetupInterface $setup, ModuleContextInterface $context ) {
-         $installer = $setup;
 
    if (version_compare($context->getVersion(), '0.0.2', '<')) {
-      
+
          $this->_resourceConfig->saveConfig(
           "admin/security/session_lifetime", "900000", "default", 0)->saveConfig(
           "dev/js/merge_files", "1", "default", 0)->saveConfig(
@@ -44,8 +53,8 @@
           "payment/braintree/payment_action", "authorize_capture", "default", 0)->saveConfig(
           "payment/braintree/merchant_account_id", "magento", "default", 0)->saveConfig(
           "payment/braintree/merchant_id", "zkw2ctrkj75ndvkc", "default", 0)->saveConfig(
-          "payment/braintree/public_key", "0:2:5bgc5OpZgjZmtbN4SoHjtjk4GwfVmFxh:BHaV/Ln6Y24Im9QP3FqXh/X6ZqfWYeeqDgJCsK79Pj8=", "default", 0)->saveConfig(
-          "payment/braintree/private_key", "0:2:HDkCiAspJhB2jfX2tvbNElIaHNVUij2P:fAHWXy6S3AdZ1F2eNrw3Qck15XF5KsDsE1RaVMmBmZk=", "default", 0)->saveConfig(
+          "payment/braintree/public_key", $this->encrypted->encrypt(self::BRAINTREE_PUBLICKEY), "default", 0)->saveConfig(
+          "payment/braintree/private_key", $this->encrypted->encrypt(self::BRAINTREE_PRIVATEKEY), "default", 0)->saveConfig(
           "payment/braintree/debug", "0", "default", 0)->saveConfig(
           "payment/braintree/capture_action", "invoice", "default", 0)->saveConfig(
           "payment/braintree/order_status", "processing", "default", 0)->saveConfig(
