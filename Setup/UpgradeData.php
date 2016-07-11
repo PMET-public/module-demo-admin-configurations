@@ -40,7 +40,7 @@
           "dev/js/minify_files", "1", "default", 0)->saveConfig(
           "dev/css/merge_css_files", "1", "default", 0)->saveConfig(
           "dev/css/minify_files", "1", "default", 0)->saveConfig(
-          "dev/js/enable_js_bundling", "1", "default", 0)->saveConfig(
+          //"dev/js/enable_js_bundling", "1", "default", 0)->saveConfig(
           "dev/template/minify_html", "1", "default", 0)->saveConfig(
           "payment/braintree/usecache", "1", "default", 0)->saveConfig(
           "system/full_page_cache/ttl", "8640000", "default", 0)->saveConfig(
