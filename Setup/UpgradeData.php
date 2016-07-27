@@ -82,5 +82,13 @@
              //turn off js bundling
              $this->_resourceConfig->saveConfig("dev/js/enable_js_bundling", "0", "default", 0);
          }
+         if (version_compare($context->getVersion(), '0.0.4', '<')) {
+             //increase cron runtimes
+             $this->_resourceConfig->saveConfig(
+             "system/cron/index/schedule_lifetime", "10", "default", 0)->saveConfig(
+             "system/cron/staging/schedule_lifetime", "10", "default", 0)->saveConfig(
+             "system/cron/catalog_event/schedule_lifetime", "10", "default", 0
+          );
+         }
     }
 }   
