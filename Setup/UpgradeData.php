@@ -11,7 +11,8 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Event\ObserverInterface;
 
-class UpgradeData implements UpgradeDataInterface {
+class UpgradeData implements UpgradeDataInterface
+{
     public $_resourceConfig;
     /**
      * @var \Magento\Framework\App\Config\ScopeConfigInterface
@@ -30,17 +31,11 @@ class UpgradeData implements UpgradeDataInterface {
         $this->encrypted=$encrypted;
     }
 
-    public function upgrade( ModuleDataSetupInterface $setup, ModuleContextInterface $context ) {
-
+    public function upgrade( ModuleDataSetupInterface $setup, ModuleContextInterface $context )
+    {
         if (version_compare($context->getVersion(), '0.0.2', '<')) {
-
             $this->_resourceConfig->saveConfig(
-                "admin/security/session_lifetime", "900000", "default", 0)->saveConfig(
                 "payment/braintree/usecache", "1", "default", 0)->saveConfig(
-                "system/full_page_cache/ttl", "8640000", "default", 0)->saveConfig(
-                "web/cookie/cookie_lifetime", "604800", "default", 0)->saveConfig(
-                "admin/security/admin_account_sharing", "1", "default", 0)->saveConfig(
-                "web/seo/use_rewrites", "1", "default", 0)->saveConfig(
                 "payment/braintree/active", "1", "default", 0)->saveConfig(
                 "payment/braintree/title", "Credit Card", "default", 0)->saveConfig(
                 "payment/braintree/environment", "sandbox", "default", 0)->saveConfig(
@@ -72,17 +67,6 @@ class UpgradeData implements UpgradeDataInterface {
                 "payment/braintree_paypal/debug", "0", "default", 0
             );
         }
-        if (version_compare($context->getVersion(), '0.0.3', '<')) {
-            //turn off js bundling
-            $this->_resourceConfig->saveConfig("dev/js/enable_js_bundling", "0", "default", 0);
-        }
-        if (version_compare($context->getVersion(), '0.0.4', '<')) {
-            //increase cron runtimes
-            $this->_resourceConfig->saveConfig(
-                "system/cron/index/schedule_lifetime", "10", "default", 0)->saveConfig(
-                "system/cron/staging/schedule_lifetime", "10", "default", 0)->saveConfig(
-                "system/cron/catalog_event/schedule_lifetime", "10", "default", 0
-            );
-        }
     }
-}   
+
+}
