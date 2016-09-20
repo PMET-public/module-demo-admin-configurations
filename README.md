@@ -1,4 +1,4 @@
-MagentoEse_AdminConfigurations module consists of configuration data.
+MagentoEse_DemoAdminConfigurations module consists of configuration data.
 
 It adds supporting sample data for settings within the admin.
 

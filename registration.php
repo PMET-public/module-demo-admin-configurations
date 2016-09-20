@@ -6,4 +6,4 @@
 
 use \Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'MagentoEse_AdminConfigurations', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'MagentoEse_DemoAdminConfigurations', __DIR__);

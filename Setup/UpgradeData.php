@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace MagentoEse\AdminConfigurations\Setup;
+namespace MagentoEse\DemoAdminConfigurations\Setup;
 
 use Magento\Framework\Setup\UpgradeDataInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
