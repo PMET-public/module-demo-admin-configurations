@@ -67,7 +67,7 @@ class UpgradeData implements UpgradeDataInterface
                 "payment/braintree_paypal/debug", "0", "default", 0
             );
         }
-        if (version_compare($context->getVersion(), '0.0.5', '<')) {
+        if (version_compare($context->getVersion(), '0.0.5', '<=')) {
             $this->_resourceConfig->saveConfig("google/analytics/account", "UA-53529203-4", "default", 0);
         }
     }
