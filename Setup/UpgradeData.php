@@ -33,10 +33,6 @@ class UpgradeData implements UpgradeDataInterface
 
     public function upgrade( ModuleDataSetupInterface $setup, ModuleContextInterface $context )
     {
-        xdebug_break();
-        if (version_compare($context->getVersion(), '0.0.2', '<')) {
-            $this->_resourceConfig->saveConfig("google/analytics/account", "UA-53529203-5", "default", 0);
-        }
         if (version_compare($context->getVersion(), '0.0.5', '<=')) {
             $this->_resourceConfig->saveConfig("google/analytics/account", "UA-53529203-4", "default", 0);
         }
