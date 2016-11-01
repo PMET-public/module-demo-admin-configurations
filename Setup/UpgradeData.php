@@ -19,8 +19,7 @@ class UpgradeData implements UpgradeDataInterface
      */
     protected $scopeConfig;
     private $encrypted;
-    const BRAINTREE_PUBLICKEY = 'sn6xgt8pqv8868pq';
-    const BRAINTREE_PRIVATEKEY = 'ad7807895eae5bd5a3cc913005eaefe8';
+
     public function __construct(
         \Magento\Config\Model\ResourceModel\Config $resourceConfig,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
