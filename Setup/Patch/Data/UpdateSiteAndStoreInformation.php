@@ -10,7 +10,7 @@ namespace MagentoEse\DemoAdminConfigurations\Setup\Patch\Data;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 
 
-class AddSiteAndStoreInformation implements DataPatchInterface
+class UpdateSiteAndStoreInformation implements DataPatchInterface
 {
 
 
@@ -59,6 +59,16 @@ class AddSiteAndStoreInformation implements DataPatchInterface
             ->saveConfig("design/head/default_keywords", "fashion,women,blouse,top,pant,dress,venia", "stores", 3);
         //remove default welcome message
         $this->resourceConfig->saveConfig("design/header/welcome", "", "default", 0);
+        //enable RMA
+        $this->resourceConfig->saveConfig("sales/magento_rma/use_store_addresssales/magento_rma/use_store_address", "1", "default", 0)
+            ->saveConfig("sales/magento_rma/enabled_on_product", "1", "default", 0)
+            ->saveConfig("sales/magento_rma/enabled", "1", "default", 0);
+        //set upsells, crosssells, related
+        $this->resourceConfig->saveConfig("catalog/magento_targetrule/upsell_position_limit", "5", "default", 0)
+            ->saveConfig("catalog/magento_targetrule/crosssell_position_limit", "6", "default", 0)
+            ->saveConfig("catalog/magento_targetrule/related_position_limit", "5", "default", 0);
+        //different related setting for venia
+        $this->resourceConfig->saveConfig("catalog/magento_targetrule/related_position_limit", "4", "stores", 3);
     }
 
     public static function getDependencies()
