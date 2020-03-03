@@ -2,12 +2,16 @@
     "name": "magentoese/module-demo-admin-configurations",
     "type": "magento2-module",
     "require": {
-        "magento/framework": "*"
+        "magento/framework": "*",
+        "magentoese/module-admin-configurations": "*",
+        "magentoese/module-luma-de-setup": "*",
+        "magentoese/module-venia-setup": "*"
     },
     "autoload": {
         "files": [ "registration.php" ],
         "psr-4": {
             "MagentoEse\\DemoAdminConfigurations\\": ""
         }
-    }
+    },
+    "version": "1.0.5"
 }
